@@ -46,6 +46,14 @@ void fermer_console() {
     endwin();
 }
 
+void entree_non_bloquante() {
+    timeout(0);
+}
+
+void entre_bloquante() {
+    timeout(-1);
+}
+
 void ecrire_char(int x, int y, char chr) {
     mvaddch(y, x, chr);
 }
@@ -103,4 +111,9 @@ void changer_couleur(Couleur couleur, Plan plan) {
             attron(COLOR_PAIR(JAUNE_PREMIER_PLAN));
         }
     }
+}
+
+void ecrire_string(const std::string& message, int x, int y) {
+    bouger_curseur(x, y);
+    printw(message.c_str());
 }
