@@ -1,3 +1,4 @@
 extlib/
 build/
 *.sh
+*.exe
