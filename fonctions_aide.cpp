@@ -83,11 +83,11 @@ void changer_couleur(Couleur couleur, Plan plan) {
 
     else if (couleur == Couleur::VERT) {
         if (plan == Plan::ARRIERE) {
-            attron(COLOR_PAIR(ROUGE_ARRIERE_PLAN));
+            attron(COLOR_PAIR(VERT_ARRIERE_PLAN));
         } 
         
         else {
-            attron(COLOR_PAIR(ROUGE_PREMIER_PLAN));
+            attron(COLOR_PAIR(VERT_PREMIER_PLAN));
         }
     }
 

@@ -10,10 +10,12 @@
 #include "fonctions_exemples.h"
 
 void afficher_instructions() {
+    changer_couleur(Couleur::VERT, Plan::ARRIERE);
     ecrire_string("Appuyez sur s et d pour des lignes", 0, 0);
     ecrire_string("Appuyez sur z pour des diagonales", 0, 1);
     ecrire_string("Appuyez sur e pour afficher des caracteres aleatoires (k pour quitter)", 0, 2);
     ecrire_string("Appuyez sur a pour quitter", 0, 3);
+    couleur_defaut();
 }
 
 int main() {
@@ -61,6 +63,7 @@ int main() {
 
                 // Affiche des caractères aléatoires à l'écran (voir fonctions_exemples.cpp)
                 affichage_aleatoire();
+                afficher_instructions();
                 // Attends 100ms (0.1s)
                 std::this_thread::sleep_for(std::chrono::milliseconds(50));
             }

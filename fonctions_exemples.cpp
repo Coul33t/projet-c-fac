@@ -43,7 +43,9 @@ void alterner_lignes_2() {
     size_t taille_message = message.length();
     int x = (CONSOLE_X_SIZE / 2) - size_t(taille_message / 2);
     int y = CONSOLE_Y_SIZE / 2;
+    changer_couleur(Couleur::VERT, Plan::ARRIERE);
     ecrire_string(message, x, y);
+    couleur_defaut();
 }
 
 void diagonales() {
@@ -56,7 +58,7 @@ void diagonales() {
             }
 
             else if(x % pas == y % pas) {
-                changer_couleur(Couleur::VERT, Plan::ARRIERE);
+                changer_couleur(Couleur::BLEU, Plan::ARRIERE);
                 ecrire_char(x, y, ' ');
             }            
         }
@@ -68,8 +70,11 @@ void affichage_aleatoire() {
 
     for (int y = 0; y < CONSOLE_Y_SIZE; y++) {
         for (int x = 0; x < CONSOLE_X_SIZE; x++) {
+            changer_couleur(Couleur(rand() % 5), Plan(rand() % 2));
             char val = rand() % (int('z') - int('A')) + int('A');
             ecrire_char(x, y, val);
         }
     }
+
+    couleur_defaut();
 }
